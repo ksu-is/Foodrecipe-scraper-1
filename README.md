@@ -1,2 +1,3 @@
 # Foodrecipe-scraper-1
-This is a recipe scrapper that will find given recipe for the user
+This project is intended to help those in need of an idea for dinner.
+The program will randomly generate a meal recipe, along with the instructions on how to make the meal. 
