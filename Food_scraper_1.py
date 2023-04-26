@@ -20,4 +20,6 @@ for link in recipe_links:
     # Print out the recipe name and URL
     print(recipe_name)
     print(recipe_url)
-print('test')
+
+    # Print a user with a good by method
+    print("Thank you for using this tools, goodbye")
