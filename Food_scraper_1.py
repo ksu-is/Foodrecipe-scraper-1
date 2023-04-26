@@ -1,5 +1,5 @@
 '''
-THis is a scraping tool, intended to help people decide and cook what's for dinner
+This is a scraping tool, intended to help people decide and cook what's for dinner
 '''
 
 import requests
