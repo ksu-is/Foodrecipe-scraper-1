@@ -55,6 +55,6 @@ while True:
     if user_choice == "y":
         continue
     else:
-        print("Thank you for using the tool. Goodbye!")
+        print("Thank you for using this tool, have a great day Goodbye!")
         break
 
