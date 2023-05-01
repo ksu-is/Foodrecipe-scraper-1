@@ -58,4 +58,3 @@ while True:
         print("Thank you for using the tool. Goodbye!")
         break
 
-    
