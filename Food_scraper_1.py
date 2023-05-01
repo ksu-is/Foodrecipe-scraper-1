@@ -8,33 +8,35 @@ while True:
 
     # Construct URL with a search query
     encoded_recipe_name = quote(recipe_name)
-    url = f"https://www.foodnetwork.com/search/{encoded_recipe_name}-CUSTOM_FACET:RECIPE_FACET"
-    response = requests.get(url)
+    url = f"https://www.foodnetwork.com/search/{encoded_recipe_name}-"
+    response = requests.get(url, timeout=5)
 
     # Parse the HTML content using Beautiful soup
     soup = BeautifulSoup(response.content, "html.parser")
 
     # Find the first search result link
-    search_result = soup.find("a", class_="m-MediaBlock_a-headlineAnchor")
+    search_result = soup.find("h3", class_="m-MediaBlock__a-Headline")
 
     if search_result is None:
-        print("No results found. Please try another recipe.")
+        print("No results found. Please try again.")
+        print()
         continue
 
     # Extract the recipe URL from the search result link
-    recipe_url = search_result["href"]
+    recipe_tag = search_result.a
+    recipe_url = "https:" + recipe_tag['href']
 
     # Send an HTTP request to the recipe URL
-    response = requests.get(recipe_url)
+    response = requests.get(recipe_url, timeout=5)
 
     # Parse the HTML Content using Beautiful Soup
     soup = BeautifulSoup(response.content, "html.parser")
 
     # Find recipe name
-    recipe_name = soup.find("h1", class_="o-AssetTitle__a-HeadlineText").get_text()
+    recipe_name = soup.find("span", class_="o-AssetTitle__a-HeadlineText").contents
 
     # Find the ingredients list and process
-    ingredients_list = soup.find_all("span", class_="ingredients-item-name")
+    ingredients_list = soup.find("div", class_="o-Ingredients__m-Body")
     process_list = soup.find_all("li", class_="o-Method__m-Step")
 
     print(f"Recipe: {recipe_name}")
@@ -55,5 +57,5 @@ while True:
     if user_choice == "y":
         continue
     else:
-        print("Thank you for using this tool, have a great day Goodbye!")
+        print("Thank you for using the tool. Goodbye!")
         break
