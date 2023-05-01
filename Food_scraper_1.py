@@ -18,7 +18,7 @@ while True:
     search_result = soup.find("a", class_="m-MediaBlock_a-headlineAnchor")
 
     if search_result is None:
-        print("No results found. Please try anohter recipe.")
+        print("No results found. Please try another recipe.")
         continue
 
     # Extract the recipe URL from the search result link
