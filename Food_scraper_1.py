@@ -19,7 +19,6 @@ while True:
 
     if search_result is None:
         print("No results found. Please try again.")
-        print()
         continue
 
     # Extract the recipe URL from the search result link
