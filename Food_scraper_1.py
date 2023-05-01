@@ -18,7 +18,7 @@ while True:
     search_result = soup.find("a", class_="m-MediaBlock_a-headlineAnchor")
 
     if search_result is None:
-        print("No results found. Please try again.")
+        print("No results found. Please try anohter recipe.")
         continue
 
     # Extract the recipe URL from the search result link
@@ -55,6 +55,5 @@ while True:
     if user_choice == "y":
         continue
     else:
-        print("Thank you for using the tool. Goodbye!")
+        print("Thank you for using this tool, have a great day Goodbye!")
         break
-
