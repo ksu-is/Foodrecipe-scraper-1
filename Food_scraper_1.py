@@ -52,7 +52,7 @@ while True:
         user_choice = input("Do you want to search for another recipe? (y/n): ")
         if user_choice in ["y", "n"]:
             break
-        print("Invalid choice. Please try again.")
+        print("This choice is not available. Please try again.")
     if user_choice == "y":
         continue
     else:
